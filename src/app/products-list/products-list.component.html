@@ -1,3 +1,32 @@
-<p>
-  products-list works!
-</p>
+<div class="card" class="-mt-3">
+  <div class="card-header text-white bg-info">
+    <h5> Listes de Produits</h5>
+  </div>
+  <div class="card-body">
+
+
+
+
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Titre</th>
+          <th>Prix Unitaire</th>
+        </tr>
+        <tr *ngFor="let p of data">
+          <td>{{p.code}}</td>
+          <td>{{p.titre}}</td>
+          <td>{{p.prixUnitaire}}</td>
+        </tr>
+
+
+
+      </thead>
+    </table>
+
+
+  </div>
+
+</div>
