@@ -4,27 +4,28 @@
   </div>
   <div class="card-body">
 
-
-
-
-
-    <table class="table table-bordered table-striped">
+    <table ng-if="data && data.length"
+    class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th>Code</th>
-          <th>Titre</th>
-          <th>Prix Unitaire</th>
+            <th>Code</th>
+            <th>Titre</th>
+            <th>Prix Unitaire</th>
         </tr>
-        <tr *ngFor="let p of data">
-          <td>{{p.code}}</td>
-          <td>{{p.titre}}</td>
-          <td>{{p.prixUnitaire}}</td>
-        </tr>
-
-
-
       </thead>
+      <tbody>
+
+        <tr *ngFor="let p of data">
+            <td scope="row">{{p.code}}</td>
+            <td>{{p.titre}}</td>
+            <td>{{p.prixUnitaire | currency: 'EUR':'symbol':'7.2-4'}}</td>
+          </tr>
+      </tbody>
     </table>
+
+
+
+
 
 
   </div>
